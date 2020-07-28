@@ -1,4 +1,4 @@
-package com.techprimers.mybatis.springbootmybatis.resource;
+package com.techprimers.mybatis.springbootmybatis.controller;
 
 import com.techprimers.mybatis.springbootmybatis.mapper.UsersMapper;
 import com.techprimers.mybatis.springbootmybatis.model.Users;
@@ -11,11 +11,11 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/rest/users")
-public class UsersResource {
+public class UsersController {
 
     private UsersMapper usersMapper;
 
-    public UsersResource(UsersMapper usersMapper) {
+    public UsersController(UsersMapper usersMapper) {
         this.usersMapper = usersMapper;
     }
 
@@ -43,3 +43,5 @@ public class UsersResource {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
+
+
