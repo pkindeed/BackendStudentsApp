@@ -8,14 +8,14 @@ import java.util.List;
 @Mapper
 public interface UsersMapper {
 
-    @Select("select * from Users")
+    @Select("select * from users")
     List<Users> findAll();
 
-    @Insert("insert into Users(name,salary) values(#{name},#{salary})")
+    @Insert("insert into users(name,salary) values(#{name},#{salary})")
     @SelectKey(statement = "SELECT LAST_INSERT_ID()", keyProperty = "id",
             before = false, resultType = Integer.class)
     void insert(Users users);
 
-    @Delete("delete from Users")
+    @Delete("delete from users")
     void delete();
 }
